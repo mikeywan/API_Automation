@@ -23,4 +23,3 @@ Steps to run this test framework:
 
 7. Enter into root folder(with pom.xml and testng.xml in it) of this project then run following command
    mvn clean test 
-
