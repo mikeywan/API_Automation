@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
         "id",
         "node_id",
+        "name",
+        "full_name",
         "owner"
 })
 public class GitHub {
@@ -22,7 +24,6 @@ public class GitHub {
     private String fullName;
     @JsonProperty("owner")
     private Owner owner = new Owner();
-
 
     @JsonProperty("id")
     public int getId() {
