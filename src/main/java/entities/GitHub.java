@@ -16,9 +16,13 @@ public class GitHub {
     private int id;
     @JsonProperty("node_id")
     private String nodeId;
+    @JsonProperty("name")
+    private String name;
+    @JsonProperty("full_name")
+    private String fullName;
     @JsonProperty("owner")
     private Owner owner = new Owner();
-//    private List<Owner> owner = new ArrayList<Owner>();
+
 
     @JsonProperty("id")
     public int getId() {
@@ -29,6 +33,12 @@ public class GitHub {
     public String getNodeId() {
         return nodeId;
     }
+
+    @JsonProperty("name")
+    public String getName() { return name; }
+
+    @JsonProperty("full_name")
+    public String getFullName() { return fullName; }
 
     @JsonProperty("owner")
     public Owner getOwner() {

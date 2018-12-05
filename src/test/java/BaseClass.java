@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import java.io.IOException;
 
 public class BaseClass {
-    public static ConfigReader configReader = ConfigReader.getInstance();
+    protected static ConfigReader configReader = ConfigReader.getInstance();
     protected static final String BASE_ENDPOINT = configReader.getBaseEndpoint();
 
     protected CloseableHttpClient client;
@@ -20,7 +20,12 @@ public class BaseClass {
 
     @AfterMethod
     public void closeResource() throws IOException {
-        client.close();
-        response.close();
+        if (client != null) {
+            client.close();
+        }
+
+        if (response != null) {
+            response.close();
+        }
     }
 }
